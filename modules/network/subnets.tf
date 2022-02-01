@@ -21,13 +21,3 @@ resource "aws_subnet" "subnet_1b" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 }
-
-resource "aws_route_table_association" "route_table_association_1a" {
-  subnet_id      = aws_subnet.subnet_1a.id
-  route_table_id = aws_route_table.route_table.id
-}
-
-resource "aws_route_table_association" "route_table_association_1b" {
-  subnet_id      = aws_subnet.subnet_1b.id
-  route_table_id = aws_route_table.route_table.id
-}
