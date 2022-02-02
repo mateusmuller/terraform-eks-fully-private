@@ -1,5 +1,5 @@
 resource "aws_security_group_rule" "eks_sg_ingress_rule" {
-  cidr_blocks = ["10.0.0.0/16"]
+  cidr_blocks = [ var.cidr_block ]
   from_port   = 443
   to_port     = 443
   protocol    = "tcp"

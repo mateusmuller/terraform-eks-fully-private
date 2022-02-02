@@ -3,10 +3,22 @@ variable "kubernetes_version" {
   default = "1.21"
 }
 
-variable "cluster_name" {}
+variable "cluster_name" {
+  type = string
+}
 
-variable "subnet_1a" {}
+variable "subnet_1a" {
+  type = string
+}
 
-variable "subnet_1b" {}
+variable "subnet_1b" {
+  type = string
+}
 
-variable "tags" {}
+variable "cidr_block" {
+  type = string
+}
+
+variable "tags" {
+  type = map(string)
+}
