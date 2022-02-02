@@ -14,10 +14,6 @@ resource "aws_eks_node_group" "eks_node_group" {
     min_size     = var.min_size
   }
 
-  remote_access {
-    ec2_ssh_key = "eks"
-  }
-
   depends_on = [
     aws_iam_role_policy_attachment.eks_AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.eks_AmazonEKS_CNI_Policy,
