@@ -26,6 +26,8 @@ resource "aws_vpc_endpoint" "vpce_ecr_api" {
   ]
 
   private_dns_enabled = true
+
+  tags = var.tags
 }
 
 resource "aws_vpc_endpoint" "vpce_ecr_dkr" {
@@ -41,6 +43,8 @@ resource "aws_vpc_endpoint" "vpce_ecr_dkr" {
   ]
 
   private_dns_enabled = true
+
+  tags = var.tags
 }
 
 resource "aws_vpc_endpoint" "vpce_ec2" {
@@ -56,6 +60,8 @@ resource "aws_vpc_endpoint" "vpce_ec2" {
   ]
 
   private_dns_enabled = true
+
+  tags = var.tags
 }
 
 resource "aws_vpc_endpoint" "vpce_sts" {
@@ -71,6 +77,8 @@ resource "aws_vpc_endpoint" "vpce_sts" {
   ]
 
   private_dns_enabled = true
+
+  tags = var.tags
 }
 
 resource "aws_vpc_endpoint" "vpce_logs" {
@@ -86,6 +94,8 @@ resource "aws_vpc_endpoint" "vpce_logs" {
   ]
 
   private_dns_enabled = true
+
+  tags = var.tags
 }
 
 resource "aws_vpc_endpoint" "vpce_s3" {
@@ -96,4 +106,6 @@ resource "aws_vpc_endpoint" "vpce_s3" {
   route_table_ids = [
     aws_route_table.route_table.id
   ]
+
+  tags = var.tags
 }

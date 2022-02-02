@@ -24,3 +24,7 @@ variable "subnet_1a" {
 variable "subnet_1b" {
   type = string
 }
+
+variable "tags" {
+  type = map(string)
+}

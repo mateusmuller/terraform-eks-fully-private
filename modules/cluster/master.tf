@@ -18,4 +18,6 @@ resource "aws_eks_cluster" "eks_cluster" {
     aws_iam_role_policy_attachment.eks_cluster_cluster,
     aws_iam_role_policy_attachment.eks_cluster_service
   ]
+
+  tags = var.tags
 }

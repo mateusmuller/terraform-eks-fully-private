@@ -13,6 +13,7 @@ resource "aws_iam_role" "eks_master_role" {
     }]
   })
 
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "eks_cluster_cluster" {
