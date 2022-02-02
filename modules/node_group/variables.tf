@@ -1,15 +1,15 @@
 variable "desired_size" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "max_size" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "min_size" {
-  type = number
+  type    = number
   default = 0
 }
 

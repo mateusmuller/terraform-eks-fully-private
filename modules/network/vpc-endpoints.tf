@@ -1,13 +1,13 @@
 resource "aws_security_group" "sg_vpc_endpoint" {
-  name        = "Allow port 443 from VPC CIDR"
-  vpc_id      = aws_vpc.vpc.id
+  name   = "Allow port 443 from VPC CIDR"
+  vpc_id = aws_vpc.vpc.id
 
   ingress {
-    description      = "HTTPS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = [ var.cidr_block ]
+    description = "HTTPS from VPC"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = [var.cidr_block]
   }
 
   tags = var.tags
@@ -18,7 +18,7 @@ resource "aws_vpc_endpoint" "vpce_ecr_api" {
   service_name      = "com.amazonaws.${data.aws_region.region.name}.ecr.api"
   vpc_endpoint_type = "Interface"
 
-  security_group_ids = [ aws_security_group.sg_vpc_endpoint.id ]
+  security_group_ids = [aws_security_group.sg_vpc_endpoint.id]
 
   subnet_ids = [
     aws_subnet.subnet_1a.id,
@@ -33,7 +33,7 @@ resource "aws_vpc_endpoint" "vpce_ecr_dkr" {
   service_name      = "com.amazonaws.${data.aws_region.region.name}.ecr.dkr"
   vpc_endpoint_type = "Interface"
 
-  security_group_ids = [ aws_security_group.sg_vpc_endpoint.id ]
+  security_group_ids = [aws_security_group.sg_vpc_endpoint.id]
 
   subnet_ids = [
     aws_subnet.subnet_1a.id,
@@ -48,7 +48,7 @@ resource "aws_vpc_endpoint" "vpce_ec2" {
   service_name      = "com.amazonaws.${data.aws_region.region.name}.ec2"
   vpc_endpoint_type = "Interface"
 
-  security_group_ids = [ aws_security_group.sg_vpc_endpoint.id ]
+  security_group_ids = [aws_security_group.sg_vpc_endpoint.id]
 
   subnet_ids = [
     aws_subnet.subnet_1a.id,
@@ -63,7 +63,7 @@ resource "aws_vpc_endpoint" "vpce_sts" {
   service_name      = "com.amazonaws.${data.aws_region.region.name}.sts"
   vpc_endpoint_type = "Interface"
 
-  security_group_ids = [ aws_security_group.sg_vpc_endpoint.id ]
+  security_group_ids = [aws_security_group.sg_vpc_endpoint.id]
 
   subnet_ids = [
     aws_subnet.subnet_1a.id,
@@ -78,7 +78,7 @@ resource "aws_vpc_endpoint" "vpce_logs" {
   service_name      = "com.amazonaws.${data.aws_region.region.name}.logs"
   vpc_endpoint_type = "Interface"
 
-  security_group_ids = [ aws_security_group.sg_vpc_endpoint.id ]
+  security_group_ids = [aws_security_group.sg_vpc_endpoint.id]
 
   subnet_ids = [
     aws_subnet.subnet_1a.id,
